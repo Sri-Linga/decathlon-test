@@ -13,7 +13,6 @@ class List extends Component {
       <Table>
         <thead>
           <tr>
-            <th>#</th>
             <th>Place</th>
             <th>User Name</th>
             <th>Address</th>
@@ -27,19 +26,16 @@ class List extends Component {
               return (
                 <tr key={i}>
                   <td className="list-item">
-                    {i+1}
-                  </td>
-                  <td className="list-item">
                     {e.properties.name}
                   </td>
                   <td className="list-item">
                     {e.properties.user.first_name + " " + e.properties.user.last_name}
                   </td>
                   <td className="list-item">
-                    {e.properties.address_components.address}
+                  {e.properties.address_components.address ? e.properties.address_components.address:'N/A'}
                   </td>
                   <td className="list-item">
-                    {e.properties.contact_details.phone}
+                    {e.properties.contact_details.phone ? e.properties.contact_details.phone : 'N/A'}
                   </td>
                   <td className="list-item">
                     {e.properties.activities.length}
